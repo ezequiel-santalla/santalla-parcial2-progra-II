@@ -10,24 +10,6 @@
       "dni": 12345678
     },
     {
-      "lastName": "Gómez",
-      "occupation": "Doctor",
-      "name": "Juana",
-      "kitNumber": 2,
-      "neighborhood": "Uptown",
-      "age": 25,
-      "dni": 87654321
-    },
-    {
-      "lastName": "López",
-      "occupation": "Nurse",
-      "name": "Alicia",
-      "kitNumber": 3,
-      "neighborhood": "Midtown",
-      "age": 35,
-      "dni": 11223344
-    },
-    {
       "lastName": "Díaz",
       "occupation": "Chef",
       "name": "Carlos",
@@ -39,10 +21,30 @@
   ],
   "isolated": [
     {
+      "lastName": "Gómez",
+      "occupation": "Doctor",
+      "name": "Juana",
+      "temperature": 38.28261775362371,
+      "kitNumber": 2,
+      "neighborhood": "Uptown",
+      "age": 25,
+      "dni": 87654321
+    },
+    {
+      "lastName": "López",
+      "occupation": "Nurse",
+      "name": "Alicia",
+      "temperature": 38.145087815233865,
+      "kitNumber": 3,
+      "neighborhood": "Midtown",
+      "age": 35,
+      "dni": 11223344
+    },
+    {
       "lastName": "Martínez",
       "occupation": "Teacher",
       "name": "Roberto",
-      "temperature": 38.738846793725166,
+      "temperature": 38.140053191514355,
       "kitNumber": 4,
       "neighborhood": "Eastside",
       "age": 28,

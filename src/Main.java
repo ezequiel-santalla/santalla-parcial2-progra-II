@@ -1,5 +1,4 @@
 import exception.NoKitException;
-import exception.TemperatureExceededException;
 import service.PersonService;
 
 public class Main {
@@ -14,25 +13,22 @@ public class Main {
             personService.registerPerson("Roberto", "Martínez", 28, "Eastside", 44556677, "Teacher");
             personService.registerPerson("Carlos", "Díaz", 40, "Westside", 99887766, "Chef");
             personService.registerPerson("Eva", "Ramírez", 32, "Northside", 55667788, "Artist");
-
         } catch (NoKitException e) {
             System.out.println("Error: " + e.getMessage());
         }
         System.out.println();
 
+        // Testing the temperatures
         System.out.println("Testing the temperatures...");
         System.out.println();
         personService.test();
 
         // Trying isolation and catching the exception
-        try {
-            personService.isolate();
-        } catch (TemperatureExceededException e) {
-            System.out.println();
-            System.out.println("Exception: " + e.getMessage() + " | Kit Number: " + e.getKitNumber() + " | Neighborhood: " + e.getNeighborhood());
-        }
+        System.out.println();
+        personService.isolate();
 
         // Generate JSON report with healthy and isolated people
+        System.out.println();
         personService.generateJsonReport();
     }
 }

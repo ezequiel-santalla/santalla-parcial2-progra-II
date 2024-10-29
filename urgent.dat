@@ -1,1 +1,1 @@
-[{"temperature":38.738846793725166,"kitNumber":4,"neighborhood":"Eastside"}]
+[{"KitNumber":2,"Exception":"High temperature detected: 38.28261775362371","Neighborhood":"Uptown"},{"KitNumber":3,"Exception":"High temperature detected: 38.145087815233865","Neighborhood":"Midtown"},{"KitNumber":4,"Exception":"High temperature detected: 38.140053191514355","Neighborhood":"Eastside"}]

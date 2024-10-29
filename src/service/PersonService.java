@@ -48,35 +48,43 @@ public class PersonService {
     }
 
     // Isolation method
-    public void isolate() throws TemperatureExceededException {
+    public void isolate() {
         ObjectMapper mapper = new ObjectMapper();
-        List<Map<String, Object>> isolationData = new ArrayList<>();
+        List<Map<String, Object>> exceptionsList = new ArrayList<>();
 
         for (Person person : personList) {
             Double temperature = testResults.get(person.getKitNumber());
 
             if (temperature >= 38) {
-                Map<String, Object> personData = new HashMap<>();
-                personData.put("kitNumber", person.getKitNumber());
-                personData.put("temperature", temperature);
-                personData.put("neighborhood", person.getNeighborhood());
+                try {
+                    throw new TemperatureExceededException(
+                            "High temperature detected: " + temperature,
+                            person.getKitNumber(),
+                            person.getNeighborhood()
+                    );
+                } catch (TemperatureExceededException e) {
+                    Map<String, Object> exceptionData = new HashMap<>();
+                    exceptionData.put("Exception", e.getMessage());
+                    exceptionData.put("KitNumber", e.getKitNumber());
+                    exceptionData.put("Neighborhood", e.getNeighborhood());
 
-                isolationData.add(personData);
+                    exceptionsList.add(exceptionData);
+                }
             }
         }
 
-        if (!isolationData.isEmpty()) {
+        if (!exceptionsList.isEmpty()) {
             try {
-                mapper.writeValue(new File("urgent.dat"), isolationData);
-                System.out.println();
-                System.out.println("Isolation data saved to urgent.dat.");
-            } catch (IOException e) {
-                System.out.println("Error saving isolation data to urgent.dat: " + e.getMessage());
-                e.printStackTrace();
+                mapper.writeValue(new File("urgent.dat"), exceptionsList);
+                System.out.println("All exception data saved to urgent.dat.");
+            } catch (IOException ioException) {
+                System.out.println("Error saving exception data to urgent.dat: " + ioException.getMessage());
+                ioException.printStackTrace();
             }
         }
     }
 
+    // JSON report method
     public void generateJsonReport() {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, List<Map<String, Object>>> reportData = new HashMap<>();
@@ -115,7 +123,6 @@ public class PersonService {
             System.out.println("Error saving report to JSON: " + e.getMessage());
         }
     }
-
 }
 
 
