@@ -1,0 +1,52 @@
+{
+  "healthy": [
+    {
+      "lastName": "Pérez",
+      "occupation": "Engineer",
+      "name": "Juan",
+      "kitNumber": 1,
+      "neighborhood": "Downtown",
+      "age": 30,
+      "dni": 12345678
+    },
+    {
+      "lastName": "Gómez",
+      "occupation": "Doctor",
+      "name": "Juana",
+      "kitNumber": 2,
+      "neighborhood": "Uptown",
+      "age": 25,
+      "dni": 87654321
+    },
+    {
+      "lastName": "López",
+      "occupation": "Nurse",
+      "name": "Alicia",
+      "kitNumber": 3,
+      "neighborhood": "Midtown",
+      "age": 35,
+      "dni": 11223344
+    },
+    {
+      "lastName": "Díaz",
+      "occupation": "Chef",
+      "name": "Carlos",
+      "kitNumber": 5,
+      "neighborhood": "Westside",
+      "age": 40,
+      "dni": 99887766
+    }
+  ],
+  "isolated": [
+    {
+      "lastName": "Martínez",
+      "occupation": "Teacher",
+      "name": "Roberto",
+      "temperature": 38.738846793725166,
+      "kitNumber": 4,
+      "neighborhood": "Eastside",
+      "age": 28,
+      "dni": 44556677
+    }
+  ]
+}
